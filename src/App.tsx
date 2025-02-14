@@ -69,18 +69,18 @@ export default function App() {
             onChange={(e) => setInputValue(e.target.value)} 
             onKeyDown={handleKeyDown} 
             placeholder="Adicionar Item..." 
-            className={`w-full border ${darkMode ? "border-gray-700" : "border-gray-300 text-black"}`}
+            className={`w-full border ${darkMode ? "border-gray-900" : "border-gray-300 text-black"}`}
           />
           <Button onClick={addItem} className="bg-green-500 hover:bg-green-600">Adicionar</Button>
         </div>
-        <Card className={darkMode ? "bg-gray-900 border-gray-700" : "bg-white border-gray-300"}>
+        <Card className={darkMode ? "bg-black border-gray-900" : "bg-white border-gray-300"}>
           <CardContent className="p-4">
             {items.length === 0 ? (
               <p className="text-gray-500">Nenhum Item Na Lista.</p>
             ) : (
               <ul className="space-y-2">
                 {items.map((item) => (
-                  <li key={item.id} className={`flex items-center gap-2 justify-between border p-2 rounded-lg ${darkMode ? "border-gray-700" : "border-gray-300"}`}>
+                  <li key={item.id} className={`flex items-center gap-2 justify-between border p-2 rounded-lg ${darkMode ? "border-gray-900" : "border-gray-300"}`}>
                     <div className="flex items-center gap-2">
                       <Checkbox checked={item.checked} onCheckedChange={() => toggleChecked(item.id)} className={`${darkMode ? "text-white border-white" : "text-black border-gray-400"}`} />
                       <span className={item.checked ? `${darkMode ? "line-through text-gray-400" : "line-through text-gray-600"}` : `${darkMode ? "text-white" : "text-black"}`}>{item.text}</span>
